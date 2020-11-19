@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace JWTSecure.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     [AllowAnonymous]
     public class AuthController : ControllerBase
