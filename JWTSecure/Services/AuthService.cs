@@ -1,9 +1,11 @@
-﻿using JWTSecure.Context;
-using JWTSecure.Services.interfaces;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Linq;
+using JWTSecure.Context;
 using System.Threading.Tasks;
+using System.Collections.Generic;
+using JWTSecure.Services.interfaces;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace JWTSecure.Services
 {
