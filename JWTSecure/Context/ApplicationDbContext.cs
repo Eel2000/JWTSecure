@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 
 namespace JWTSecure.Context
 {
-    public class AppContext : DbContext
+    public class ApplicationDbContext : DbContext
     {
 
-        public AppContext()
+        public ApplicationDbContext()
         {
 
         }
 
-        public AppContext(DbContextOptions<AppContext> options):base(options)
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options):base(options)
         {
              
         }
