@@ -16,6 +16,8 @@ using System.Threading.Tasks;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.OpenApi.Models;
+using JWTSecure.Services.interfaces;
+using JWTSecure.Services;
 
 namespace JWTSecure
 {
@@ -59,21 +61,9 @@ namespace JWTSecure
                     };
                 });
 
-            services.AddSwaggerGen(swagger =>
-            {
-                swagger.SwaggerDoc("v1", new OpenApiInfo
-                {
-                    Title = "JWTSecure",
-                    Version = "v1",
-                    Description = "Asp.net core api projet to learn jwt authentication.",
-                    Contact = new OpenApiContact
-                    {
-                        Name = "Eliezer Bwana",
-                        Email = "eliezerbwana@hotmail.com",
-                        Url = null
-                    },
-                });
-            });
+            services.AddSwaggerGen();
+
+            services.AddTransient<IAuthService, AuthService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -83,6 +73,14 @@ namespace JWTSecure
             {
                 app.UseDeveloperExceptionPage();
             }
+
+         
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "JWTSecure API");
+            });
+
 
             app.UseHttpsRedirection();
 
@@ -94,14 +92,6 @@ namespace JWTSecure
                 .AllowAnyHeader());
 
             app.UseAuthorization();
-
-            app.UseSwagger();
-
-            app.UseSwaggerUI(swagger =>
-            {
-                swagger.SwaggerEndpoint("/swagger/v1/swagger.json", "JWTSecure API V1");
-                swagger.RoutePrefix = string.Empty;
-            });
 
             app.UseEndpoints(endpoints =>
             {
