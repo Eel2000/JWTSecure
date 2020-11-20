@@ -38,7 +38,10 @@ namespace JWTSecure
                 option.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
 
-            
+            services.AddDbContext<JWTDbContext>(option =>
+            {
+                option.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+            });
 
             services.AddControllers();
             services.AddCors();
