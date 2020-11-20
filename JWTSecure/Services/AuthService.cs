@@ -36,15 +36,17 @@ namespace JWTSecure.Services
                 return "Impossible To Connect";
 
             //token base config
+            var issuer = _configuration.GetSection("jwt").GetSection("Issuer").Value;
             var tokehandler = new JwtSecurityTokenHandler();
             var key = Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]);
             var tokeDescriptor = new SecurityTokenDescriptor()
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-                    new Claim(ClaimTypes.Email,email)
+                    new Claim(ClaimTypes.Email,email),
+                    new Claim(ClaimTypes.Name,password)
                 }),
-                Expires = DateTime.Now.AddHours(1),
+                Expires = DateTime.UtcNow.AddHours(1),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key),SecurityAlgorithms.HmacSha256Signature),
             };
 
