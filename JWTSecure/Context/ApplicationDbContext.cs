@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace JWTSecure.Context
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : Microsoft.EntityFrameworkCore.DbContext
     {
 
         public ApplicationDbContext()

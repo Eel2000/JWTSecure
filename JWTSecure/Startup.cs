@@ -38,6 +38,8 @@ namespace JWTSecure
                 option.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
 
+            
+
             services.AddControllers();
             services.AddCors();
 
