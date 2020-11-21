@@ -68,7 +68,7 @@ namespace JWTSecure.Services
                 var token = tokehandler.CreateToken(tokeDescriptor);
 
                 //return token
-                return tokehandler.WriteToken(token);
+                return $"Connected Successfully \n {tokehandler.WriteToken(token)}";
             }
 
             return "Enable to Connect , please retry again";

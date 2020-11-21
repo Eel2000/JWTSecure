@@ -34,12 +34,12 @@ namespace JWTSecure.Controllers
             }
         }
 
-        [HttpGet("SignIn")]
-        public async Task<IActionResult> SignIn([FromBody] )
+        [HttpPost("SignIn")]
+        public async Task<IActionResult> SignIn([FromBody] SignInDto signIn )
         {
             try
             {
-                var result = await _identityAuth.SignIn(username, password);
+                var result = await _identityAuth.SignIn(signIn.Username, signIn.Password);
                 return Ok(result);
             }
             catch (Exception e)
