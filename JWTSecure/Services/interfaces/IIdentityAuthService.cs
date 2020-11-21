@@ -7,8 +7,8 @@ namespace JWTSecure.Services.interfaces
 {
     public interface IIdentityAuthService
     {
-        Task Logout();
-        Task SignIn(string username, string password);
-        Task SignUp(string username, string email, string password);
+        Task<string> Logout();
+        Task<string> SignIn(string username, string password);
+        Task<string> SignUp(string username, string email, string password);
     }
 }
