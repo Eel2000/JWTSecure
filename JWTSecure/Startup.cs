@@ -18,6 +18,8 @@ using System.Text;
 using Microsoft.OpenApi.Models;
 using JWTSecure.Services.interfaces;
 using JWTSecure.Services;
+using JWTSecure.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace JWTSecure
 {
@@ -43,6 +45,14 @@ namespace JWTSecure
                 option.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
 
+            //services.AddIdentityCore<IdentityUser>(option =>
+            //{
+            //    option.SignIn.RequireConfirmedAccount = false;
+            //}).AddEntityFrameworkStores<JWTDbContext>();
+
+            services.AddIdentity<JwtUser, IdentityRole>(option => option.SignIn.RequireConfirmedAccount = false)
+                .AddEntityFrameworkStores<JWTDbContext>();
+            
             services.AddControllers();
             services.AddCors();
 
