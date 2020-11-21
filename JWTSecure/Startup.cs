@@ -69,6 +69,7 @@ namespace JWTSecure
             services.AddSwaggerGen();
 
             services.AddTransient<IAuthService, AuthService>();
+            services.AddTransient<IIdentityAuthService, IdentityAuthService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
