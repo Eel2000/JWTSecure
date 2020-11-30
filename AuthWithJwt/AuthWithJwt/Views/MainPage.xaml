@@ -4,8 +4,57 @@
              x:Class="AuthWithJwt.Views.MainPage"
              Title="{Binding Title}">
 
-    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-        <Label Text="Welcome to Xamarin Forms and Prism!" />
-    </StackLayout>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <!--Header-->
+        <StackLayout>
+            <Label Text="Sign In With your account"
+                   FontSize="Title"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand"/>
+        </StackLayout>
+        
+        <!--Body-->
+        <StackLayout Spacing="10"
+                     Grid.Row="1">
+            
+            <!--Entries-->
+            <Entry Keyboard="Text"
+                   Margin="20,0,20,0"
+                   HeightRequest="50"
+                   Placeholder="Your User Name"/>
+
+            <Entry Keyboard="Chat"
+                   IsPassword="True"
+                   Margin="20,0,20,0"
+                   HeightRequest="50"
+                   Placeholder="Your password"/>
+            
+            <!--Buttons-->
+            <Button CornerRadius="5"
+                    Margin="20,0,20,0"
+                    HeightRequest="50"
+                    Text="Sign In"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    BackgroundColor="LightBlue"/>
+
+            <Button CornerRadius="5"
+                    Margin="20,0,20,0"
+                    HeightRequest="50"
+                    Text="Sign Up"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    BackgroundColor="WhiteSmoke"
+                    BorderColor="LightBlue"/>
+
+        </StackLayout>
+    </Grid>
 
 </ContentPage>
