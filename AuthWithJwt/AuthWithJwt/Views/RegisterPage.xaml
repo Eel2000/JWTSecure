@@ -7,11 +7,33 @@
 
     <Grid>
         <StackLayout Spacing="10"
-                     VerticalOptions="CenterAndExpand"
-                     HorizontalOptions="CenterAndExpand">
+                     VerticalOptions="CenterAndExpand">
             
             <!--Entries-->
+            <Entry Keyboard="Chat"
+                   Margin="20,0,20,0"
+                   HeightRequest="50"
+                   Placeholder="User Name for new user"/>
+
+            <Entry Keyboard="Email"
+                   Margin="20,0,20,0"
+                   HeightRequest="50"
+                   Placeholder="Email Addresse"/>
+
+            <Entry Keyboard="Chat"
+                   IsPassword="True"
+                   Margin="20,0,20,0"
+                   HeightRequest="50"
+                   Placeholder="User Password"/>
             
+            <!--Buttons-->
+            <Button CornerRadius="5"
+                    Margin="20,0,20,0"
+                    HeightRequest="50"
+                    Text="Register"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    BackgroundColor="LightBlue"/>
         </StackLayout>
     </Grid>
     
