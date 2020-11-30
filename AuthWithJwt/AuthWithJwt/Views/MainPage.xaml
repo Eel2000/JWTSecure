@@ -28,31 +28,35 @@
             <Entry Keyboard="Text"
                    Margin="20,0,20,0"
                    HeightRequest="50"
-                   Placeholder="Your User Name"/>
+                   Placeholder="Your User Name"
+                   Text="{Binding UserName}"/>
 
             <Entry Keyboard="Chat"
                    IsPassword="True"
                    Margin="20,0,20,0"
                    HeightRequest="50"
-                   Placeholder="Your password"/>
+                   Placeholder="Your password"
+                   Text="{Binding Password}"/>
             
             <!--Buttons-->
             <Button CornerRadius="5"
+                    Text="Sign In"
                     Margin="20,0,20,0"
                     HeightRequest="50"
-                    Text="Sign In"
                     TextColor="White"
                     FontAttributes="Bold"
-                    BackgroundColor="LightBlue"/>
+                    BackgroundColor="LightBlue"
+                    Command="{Binding SignInCommand}"/>
 
             <Button CornerRadius="5"
+                    Text="Sign Up"
                     Margin="20,0,20,0"
                     HeightRequest="50"
-                    Text="Sign Up"
                     TextColor="White"
                     FontAttributes="Bold"
+                    BorderColor="LightBlue"
                     BackgroundColor="WhiteSmoke"
-                    BorderColor="LightBlue"/>
+                    Command="{Binding SignUpCommand}"/>
 
         </StackLayout>
     </Grid>
