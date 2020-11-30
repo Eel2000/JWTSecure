@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace AuthWithJwt.ViewModels
 {
@@ -42,6 +43,8 @@ namespace AuthWithJwt.ViewModels
             :base(navigationService)
         {
             _navigationService = navigationService;
+
+            RegisterCommand = new Command(async () => await Register());
         }
 
         private async Task Register()
