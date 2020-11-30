@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace AuthWithJwt.ViewModels
 {
@@ -40,6 +41,9 @@ namespace AuthWithJwt.ViewModels
             Title = "Main Page";
 
             _navigationService = navigationService;
+
+            SignInCommand = new Command(async () => await SignIn());
+            SignUpCommand = new Command(async () => await SignUp());
         }
 
         private async Task SignIn()
