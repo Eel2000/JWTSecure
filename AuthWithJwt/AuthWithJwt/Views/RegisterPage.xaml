@@ -13,18 +13,21 @@
             <Entry Keyboard="Chat"
                    Margin="20,0,20,0"
                    HeightRequest="50"
-                   Placeholder="User Name for new user"/>
+                   Placeholder="User Name for new user"
+                   Text="{Binding UserName}"/>
 
             <Entry Keyboard="Email"
                    Margin="20,0,20,0"
                    HeightRequest="50"
-                   Placeholder="Email Addresse"/>
+                   Placeholder="Email Addresse"
+                   Text="{Binding Email}"/>
 
             <Entry Keyboard="Chat"
                    IsPassword="True"
                    Margin="20,0,20,0"
                    HeightRequest="50"
-                   Placeholder="User Password"/>
+                   Placeholder="User Password"
+                   Text="{Binding Password}"/>
             
             <!--Buttons-->
             <Button CornerRadius="5"
@@ -33,7 +36,8 @@
                     Text="Register"
                     TextColor="White"
                     FontAttributes="Bold"
-                    BackgroundColor="LightBlue"/>
+                    BackgroundColor="LightBlue"
+                    Command="{Binding RegisterCommand}"/>
         </StackLayout>
     </Grid>
     
